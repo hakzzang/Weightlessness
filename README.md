@@ -9,3 +9,6 @@
 
 ### 0-2. TECH CONCERT: MOBILE 2019 - 예제에서는 알려주지 않는 Model 이야기
 - https://tv.naver.com/v/9329728/list/486582
+
+### 0-3. Todo APP을 통해서 각종 문제 해결 
+- https://github.com/googlesamples/android-architecture/tree/todo-mvp/todoapp/app/src/main/java/com/example/android/architecture/blueprints/todoapp
