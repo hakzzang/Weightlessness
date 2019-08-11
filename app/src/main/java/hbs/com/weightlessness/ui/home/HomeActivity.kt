@@ -1,10 +1,10 @@
-package hbs.com.weightlessness.ui.search
+package hbs.com.weightlessness.ui.home
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import hbs.com.weightlessness.R
 
-class SearchActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
