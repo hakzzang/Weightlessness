@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="category_image_view_size">64dp</dimen>
+    <dimen name="category_image_view_background_size">40dp</dimen>
+    <dimen name="category_image_view_background_margin">32dp</dimen>
+    <dimen name="category_title_margin_size">8dp</dimen>
+    <dimen name="category_title_padding_size">4dp</dimen>
+    <dimen name="category_card_radius">4dp</dimen>
+    <dimen name="category_card_height">196dp</dimen>
+
+    <dimen name="dp_1">1dp</dimen>
+</resources>
