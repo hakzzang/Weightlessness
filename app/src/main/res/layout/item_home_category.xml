@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="title" type="String"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintDimensionRatio="H,1:1"
+                app:cardCornerRadius="@dimen/category_card_radius">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/category_card_height">
+                <ImageView
+                        android:layout_width="@dimen/category_image_view_background_size"
+                        android:layout_height="@dimen/category_image_view_background_size"
+                        android:background="@drawable/bg_home_category"
+                        android:id="@+id/iv_category_icon_background"
+                        android:layout_marginBottom="@dimen/category_image_view_background_margin"
+                        android:layout_marginRight="@dimen/category_image_view_background_margin"
+                        app:layout_constraintStart_toStartOf="@id/iv_category_icon"
+                        app:layout_constraintTop_toTopOf="@id/iv_category_icon"
+                        app:layout_constraintEnd_toEndOf="@id/iv_category_icon"
+                        app:layout_constraintBottom_toBottomOf="@id/iv_category_icon">
+                </ImageView>
+
+                <ImageView
+                        android:layout_width="@dimen/category_image_view_size"
+                        android:layout_height="@dimen/category_image_view_size"
+                        android:src="@drawable/ic_coffee"
+                        android:id="@+id/iv_category_icon"
+                        app:layout_constraintHorizontal_bias="0.1"
+                        app:layout_constraintVertical_bias="0.2"
+                        style="@style/ConstraintParentView"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_home_category"
+                        android:layout_margin="@dimen/category_title_margin_size"
+                        style="@style/ConstraintParentView"
+                        android:paddingTop="@dimen/category_title_padding_size"
+                        android:paddingBottom="@dimen/category_title_padding_size"
+                        app:layout_constraintStart_toStartOf="@id/iv_category_icon_background"
+                        app:layout_constraintVertical_bias="1.0">
+                    <TextView
+                            tools:hint="Cafe"
+                            android:text="@{title}"
+                            android:id="@+id/tv_category_title"
+                            app:layout_constraintHorizontal_bias="0.05"
+                            app:layout_constraintVertical_bias="0.1"
+                            style="@style/TitleTextViewWithConstraint"/>
+                    <TextView
+                            tools:hint="Cafe"
+                            style="@style/SubTitleTextView"
+                            app:layout_constraintTop_toBottomOf="@id/tv_category_title"
+                            app:layout_constraintStart_toStartOf="@id/tv_category_title"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintVertical_bias="0.1"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
