@@ -11,6 +11,9 @@ import kotlinx.android.synthetic.main.view_home_category.view.*
 
 class ViewHomeCategory @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
     FrameLayout(context, attrs, defStyleAttr) {
+    private val overViewMap = hashMapOf<Int,Int>()
+    private val gridLayoutManager =  GridLayoutManager(context, 2)
+    private val homeCategoryAdapter  = makeHomeCategoryAdapter()
     init {
         initView()
     }
@@ -18,18 +21,19 @@ class ViewHomeCategory @JvmOverloads constructor(context: Context, attrs: Attrib
     private fun initView(){
         val view = LayoutInflater.from(context).inflate(R.layout.view_home_category, this, true)
         view.rv_category.apply{
-            adapter = makeHomeCategoryAdapter()
-            layoutManager = GridLayoutManager(context, 2)
+            adapter = homeCategoryAdapter
+            layoutManager = gridLayoutManager
             addItemDecoration(SpacesItemDecoration(8))
         }
     }
 
     private fun makeHomeCategoryAdapter(): HomeCategoryAdapter {
-        val homeCategoryList = resources.getStringArray(hbs.com.weightlessness.R.array.home_category).toList()
-        return HomeCategoryAdapter(homeCategoryList)
+        val homeCategoryList = resources.getStringArray(R.array.home_category).toList()
+        return HomeCategoryAdapter(homeCategoryList, overViewMap)
     }
 
-    private fun dd(){
-
+    fun addJobCafeOverView(totalCafe:Int){
+        overViewMap[0] = totalCafe
+        homeCategoryAdapter.notifyItemChanged(0)
     }
 }
