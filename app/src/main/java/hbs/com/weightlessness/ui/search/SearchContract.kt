@@ -1,4 +1,4 @@
-package hbs.com.weightlessness.search
+package hbs.com.weightlessness.ui.search
 
 interface SearchContract{
     interface View{
