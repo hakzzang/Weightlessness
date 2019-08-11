@@ -12,3 +12,6 @@
 
 ### 0-3. Todo APP을 통해서 각종 문제 해결 
 - https://github.com/googlesamples/android-architecture/tree/todo-mvp/todoapp/app/src/main/java/com/example/android/architecture/blueprints/todoapp
+
+### 1. View를 만들기위한 CustomView 학습
+- https://medium.com/mindorks/android-custom-views-tutorial-part-1-115fa8d53be5
