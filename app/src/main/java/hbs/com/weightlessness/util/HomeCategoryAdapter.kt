@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import hbs.com.weightlessness.databinding.ItemHomeCategoryBinding
 
-class HomeCategoryAdapter(private val homeCategoryList: List<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class HomeCategoryAdapter(private val homeCategoryList: List<String>, private val overViewMap: HashMap<Int, Int>) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val itemHomeCategoryBinding= ItemHomeCategoryBinding.inflate(LayoutInflater.from(parent.context))
         return HomeCategoryViewHolder(itemHomeCategoryBinding)
@@ -18,6 +19,9 @@ class HomeCategoryAdapter(private val homeCategoryList: List<String>) : Recycler
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val homeCategoryViewHolder = holder as HomeCategoryViewHolder
         homeCategoryViewHolder.itemHomeCategoryBinding.title = homeCategoryList[position]
+        overViewMap[position]?.let { totalOverView ->
+            homeCategoryViewHolder.itemHomeCategoryBinding.totalOverview = totalOverView.toString()
+        }
     }
 
     class HomeCategoryViewHolder(val itemHomeCategoryBinding: ItemHomeCategoryBinding) : RecyclerView.ViewHolder(itemHomeCategoryBinding.root)
