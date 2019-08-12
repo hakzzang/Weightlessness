@@ -1,14 +1,11 @@
 package hbs.com.weightlessness.ui.home
 
-import hbs.com.weightlessness.remote.model.JobCafeList
-import io.reactivex.Observable
-
 interface HomeContract {
     interface View{
-
+        fun updateCafeTotalCount(totalCount:Int)
     }
 
     interface Presenter{
-        fun getJobCafeList() : Observable<JobCafeList>
+        fun getJobCafeList()
     }
 }
