@@ -9,7 +9,7 @@ import hbs.com.weightlessness.R
 import kotlinx.android.synthetic.main.view_home_category.view.*
 
 enum class HomeCategory(val position: Int){
-    JobCafe(0)
+    JobCafe(0), JobFestival(1)
 }
 
 class ViewHomeCategory @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
@@ -38,5 +38,10 @@ class ViewHomeCategory @JvmOverloads constructor(context: Context, attrs: Attrib
     fun addJobCafeOverView(totalCafe:Int){
         overViewMap[HomeCategory.JobCafe.position] = totalCafe
         homeCategoryAdapter.notifyItemChanged(HomeCategory.JobCafe.position)
+    }
+
+    fun addJobFestivalOverView(totalFestival:Int){
+        overViewMap[HomeCategory.JobFestival.position] = totalFestival
+        homeCategoryAdapter.notifyItemChanged(HomeCategory.JobFestival.position)
     }
 }
