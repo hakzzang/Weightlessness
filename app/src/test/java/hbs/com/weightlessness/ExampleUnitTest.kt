@@ -3,8 +3,8 @@ package hbs.com.weightlessness
 import android.util.Log
 import hbs.com.weightlessness.remote.JobCafeRepositoryImpl
 import hbs.com.weightlessness.remote.RetrofitProvider
-import hbs.com.weightlessness.usecase.JobCafeUseCase
-import hbs.com.weightlessness.usecase.JobCafeUseCaseImpl
+import hbs.com.weightlessness.usecase.JobCafeDataSource
+import hbs.com.weightlessness.usecase.JobCafeDataSourceImpl
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import org.junit.Before
@@ -17,10 +17,10 @@ import org.mockito.Mockito
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 class ExampleUnitTest {
-    private lateinit var jobCafeUseCase: JobCafeUseCase
+    private lateinit var jobCafeUseCase: JobCafeDataSource
     @Before
     fun setupTest() {
-        jobCafeUseCase = JobCafeUseCaseImpl(
+        jobCafeUseCase = JobCafeDataSourceImpl(
             JobCafeRepositoryImpl(
                 RetrofitProvider.provideSeoulApi()
             )
