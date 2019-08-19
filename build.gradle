@@ -10,6 +10,7 @@ buildscript {
         rxandroid_version = "2.1.1"
         okhttp3_version = "4.0.0"
         glide_version = "4.9.0"
+        paging_version = "2.1.0"
     }
     repositories {
         google()
