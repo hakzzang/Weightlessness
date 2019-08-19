@@ -1,9 +1,12 @@
 package hbs.com.weightlessness.util
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import hbs.com.weightlessness.databinding.ItemHomeCategoryBinding
+import hbs.com.weightlessness.ui.jobcafe.JobCafeActivity
 
 class HomeCategoryAdapter(private val homeCategoryList: List<String>, private val overViewMap: HashMap<Int, Int>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -17,12 +20,21 @@ class HomeCategoryAdapter(private val homeCategoryList: List<String>, private va
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val homeCategoryViewHolder = holder as HomeCategoryViewHolder
-        homeCategoryViewHolder.itemHomeCategoryBinding.title = homeCategoryList[position]
-        overViewMap[position]?.let { totalOverView ->
-            homeCategoryViewHolder.itemHomeCategoryBinding.totalOverview = totalOverView.toString()
+        val homeCategoryViewHolder = (holder as HomeCategoryViewHolder).itemHomeCategoryBinding.apply {
+            title = homeCategoryList[position]
+            root.setOnClickListener { changeActivity(root.context, position) }
+            overViewMap[position]?.let { totalOverView ->
+                totalOverview = totalOverView.toString()
+            }
+
         }
     }
 
-    class HomeCategoryViewHolder(val itemHomeCategoryBinding: ItemHomeCategoryBinding) : RecyclerView.ViewHolder(itemHomeCategoryBinding.root)
+    private fun changeActivity(context: Context, position: Int){
+        when(position){
+            HomeCategory.JobCafe.position -> context.startActivity(Intent(context, JobCafeActivity::class.java))
+        }
+
+    }
+    inner class HomeCategoryViewHolder(val itemHomeCategoryBinding: ItemHomeCategoryBinding) : RecyclerView.ViewHolder(itemHomeCategoryBinding.root)
 }

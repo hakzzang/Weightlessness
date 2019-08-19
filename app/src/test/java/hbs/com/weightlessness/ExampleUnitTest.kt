@@ -23,14 +23,14 @@ class ExampleUnitTest {
         jobCafeUseCase = JobCafeDataSourceImpl(
             JobCafeRepositoryImpl(
                 RetrofitProvider.provideSeoulApi()
-            )
+            ),null
         )
     }
 
     @Test
     fun getJobCafe() {
         jobCafeUseCase
-            .getJobCafeList()
+            .getJobCafeList(1,5)
             .subscribe { wrappingJobCafeList ->
                 println(wrappingJobCafeList.jobCafeList.jobCafes.toString())
             }
