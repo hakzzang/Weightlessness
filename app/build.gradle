@@ -41,10 +41,24 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
 
+    //paging
+    implementation "androidx.paging:paging-runtime:$paging_version" // For Kotlin use paging-runtime-ktx
+    // optional - RxJava support
+    implementation "androidx.paging:paging-rxjava2:$paging_version" // For Kotlin use paging-rxjava2-ktx
+
+    //glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation 'jp.wasabeef:glide-transformations:2.0.2@aar'
+
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.0.7'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // alternatively - without Android dependencies for testing
+    testImplementation "androidx.paging:paging-common:$paging_version" // For Kotlin use paging-common-ktx
 
     // required if you want to use Mockito for Android tests
     testImplementation 'org.mockito:mockito-core:2.24.5'

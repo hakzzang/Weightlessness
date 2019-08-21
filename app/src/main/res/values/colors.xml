@@ -6,4 +6,5 @@
 
     <color name="main_alpha_color">#3000f2a9</color>
     <color name="main_color">#00f2a9</color>
+    <color name="black_color_00">#000000</color>
 </resources>
