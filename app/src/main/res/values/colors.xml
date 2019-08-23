@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#007bff</color>
+    <color name="colorPrimaryDark">#0050cb</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="main_alpha_color">#3000f2a9</color>
-    <color name="main_color">#00f2a9</color>
+    <color name="colorBit">#69a9ff</color>
     <color name="black_color_00">#000000</color>
-
     <color name="white_color_00">#ffffff</color>
+
+    <color name="chatting_background_color">#f4f5f5</color>
+
 </resources>
