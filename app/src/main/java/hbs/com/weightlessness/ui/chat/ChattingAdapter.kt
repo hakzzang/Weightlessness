@@ -1,0 +1,24 @@
+package hbs.com.weightlessness.ui.chat
+
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import hbs.com.weightlessness.R
+import kotlinx.android.synthetic.main.item_chatting_dialog.view.*
+
+class ChattingAdapter(private val chattingList: List<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_chatting_dialog, parent, false)
+        return ChattingViewHolder(view)
+    }
+
+    override fun getItemCount(): Int = chattingList.size
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val chattingViewHolder = holder as ChattingViewHolder
+        chattingViewHolder.itemView.tv_chat_dialog.text = chattingList[position]
+    }
+
+    inner class ChattingViewHolder(view: View) : RecyclerView.ViewHolder(view)
+}
