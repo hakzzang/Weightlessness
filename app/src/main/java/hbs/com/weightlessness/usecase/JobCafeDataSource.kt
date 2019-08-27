@@ -1,6 +1,7 @@
 package hbs.com.weightlessness.usecase
 
 import androidx.paging.PageKeyedDataSource
+import hbs.com.weightlessness.BuildConfig
 import hbs.com.weightlessness.remote.JobCafeRepository
 import hbs.com.weightlessness.remote.model.JobCafe
 import hbs.com.weightlessness.remote.model.WrappingJobCafeList
@@ -44,6 +45,12 @@ class JobCafeDataSourceImpl(
     }
 
     override fun getJobCafeList(startIndex: Int, endIndex: Int): Observable<WrappingJobCafeList> {
-        return jobCafeRepository.getJobCafeList()
+        return jobCafeRepository.getJobCafeList(
+            BuildConfig.SeoulDataApiKey,
+            "json",
+            BuildConfig.JobCafeApiTitle,
+            startIndex.toString(),
+            endIndex.toString()
+        )
     }
 }

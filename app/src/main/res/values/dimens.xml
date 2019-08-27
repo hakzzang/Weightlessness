@@ -17,4 +17,5 @@
     <dimen name="all_padding_large_size">16dp</dimen>
     <dimen name="all_padding_extra_large_size">18dp</dimen>
     <dimen name="context_text_size">12sp</dimen>
+    <dimen name="message_sendding_container_size">64dp</dimen>
 </resources>

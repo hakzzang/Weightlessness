@@ -3,6 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+def SEOUL_DATA_API_KEY = SEOUL_API_KEY ?: "Define Your Seoul Api Key"
+def JOB_CAFE_API_TITLE = JOB_CAFE_API_TITLE_NAME ?: "Define Your Job Cafe Name"
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -18,6 +20,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    android.buildTypes.each{ config->
+        config.buildConfigField 'String', 'SeoulDataApiKey', SEOUL_DATA_API_KEY
+        config.buildConfigField 'String', 'JobCafeApiTitle', JOB_CAFE_API_TITLE
     }
     dataBinding {
         enabled = true
