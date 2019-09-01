@@ -15,3 +15,6 @@
 
 ### 1. View를 만들기위한 CustomView 학습
 - https://medium.com/mindorks/android-custom-views-tutorial-part-1-115fa8d53be5
+### 2. 새로운 프로젝트 시작
+- 피크닉
+- Repository 종료
